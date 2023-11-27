@@ -5,7 +5,7 @@ import app from "./app";
 const mainFunction = async () => {
     try {
         await mongoose.connect(config.MONGODB_BASE_URL as string, {
-            serverSelectionTimeoutMS: 3000
+            serverSelectionTimeoutMS: 10000
         })
         .then(() => console.log('Connected to mongodb'));
         

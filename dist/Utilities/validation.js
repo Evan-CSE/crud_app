@@ -9,12 +9,12 @@ const valiDationErrorMessage_1 = require("./valiDationErrorMessage");
 const validateUserData = (userData) => {
     const validator = joi_1.default.object({
         userId: joi_1.default.number().required().error(valiDationErrorMessage_1.invalidUserIdError),
-        username: joi_1.default.string().min(4).max(10).required().error(valiDationErrorMessage_1.invalidUserName),
+        username: joi_1.default.string().min(4).max(10).required().error(valiDationErrorMessage_1.invalidNameError),
         password: joi_1.default.string().min(6).max(20).required().error(valiDationErrorMessage_1.invalidPassWordError),
         age: joi_1.default.number().error(valiDationErrorMessage_1.invalidNumberTypeError),
         fullName: joi_1.default.object({
-            firstName: joi_1.default.string().regex(/^[a-zA-Z]+$/).max(10).min(3).required().error(valiDationErrorMessage_1.invalidUserName),
-            lastName: joi_1.default.string().regex(/^[a-zA-Z]+$/).max(10).min(3).required().error(valiDationErrorMessage_1.invalidUserName)
+            firstName: joi_1.default.string().regex(/^[a-zA-Z]+$/).max(10).min(3).required().error(valiDationErrorMessage_1.invalidNameError),
+            lastName: joi_1.default.string().regex(/^[a-zA-Z]+$/).max(10).min(3).required().error(valiDationErrorMessage_1.invalidNameError)
         }),
         email: joi_1.default.string().email({ minDomainSegments: 2, tlds: { allow: ['com', '.net'] } }).error(valiDationErrorMessage_1.invalidEmail),
         isActive: joi_1.default.boolean().error(valiDationErrorMessage_1.booleanError),
@@ -25,6 +25,8 @@ const validateUserData = (userData) => {
             country: joi_1.default.string().not(/'israel'/i).error(valiDationErrorMessage_1.invalidStringTypeError)
         })
     });
+    console.log(validator);
+    return true;
     return validator.validate(userData);
 };
 exports.validateUserData = validateUserData;

@@ -1,9 +1,10 @@
 import express, { Request, Response } from 'express';
+import { userInterface } from '../../Interfaces/UserInterface';
+import { userController } from '../../Controller/userController';
 
 const userRoute = express.Router();
 
-userRoute.get('/', (req: Request, res: Response) => {
-    res.send('<h1>bismillah</h1>');
-})
+userRoute.post('/', userController.createNewUser);
+userRoute.get('/', userController.getAllUsers);
 
 export default userRoute;

@@ -26,6 +26,4 @@ const userSchema = new Schema<userInterface>({
     hobbies : {type: [String], required: true}
 });
 
-userSchema.methods.joiValidation = validateUserData;
-
 export const userModel = mongoose.model('User', userSchema);

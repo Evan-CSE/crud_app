@@ -3,6 +3,6 @@ import userRoute from './userRoute';
 
 const routeV1 = express.Router();
 
-routeV1.get('/users', userRoute);
+routeV1.use('/users', userRoute);
 
 export default routeV1;

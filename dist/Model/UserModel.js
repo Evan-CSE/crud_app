@@ -25,7 +25,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.userModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const validation_1 = require("../Utilities/validation");
 const fullNameSchema = new mongoose_1.Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true }
@@ -46,5 +45,4 @@ const userSchema = new mongoose_1.Schema({
     isActive: { type: Boolean },
     hobbies: { type: [String], required: true }
 });
-userSchema.methods.joiValidation = validation_1.validateUserData;
 exports.userModel = mongoose_1.default.model('User', userSchema);
