@@ -7,7 +7,14 @@ export interface userInterface {
     email   : string,
     isActive: boolean,
     hobbies : Array<string>,
-    address : addressType
+    address : addressType,
+    orders  : Array<Order>
+};
+
+export type Order = {
+    productName: string,
+    price      : number
+    quantity   : number
 };
 
 export type addressType = {

@@ -1,6 +1,5 @@
 import mongoose, { Schema, mongo } from "mongoose";
 import { addressType, fullName, userInterface } from "../Interfaces/UserInterface";
-import { validateUserData } from "../Utilities/validation";
 
 const fullNameSchema = new Schema<fullName>({
     firstName: {type: String, required: true},
@@ -23,7 +22,8 @@ const userSchema = new Schema<userInterface>({
     fullName: {type: fullNameSchema},
     email   : {type: String, required: true},
     isActive: {type: Boolean},
-    hobbies : {type: [String], required: true}
+    hobbies : {type: [String], required: true},
+    orders:   {type: [Object]}
 });
 
 export const userModel = mongoose.model('User', userSchema);
