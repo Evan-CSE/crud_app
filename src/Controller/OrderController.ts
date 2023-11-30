@@ -1,4 +1,4 @@
-import { Response, response } from "express";
+import { Response } from "express";
 import { OrderService } from "../Services/OrderService";
 import CustomRequestType from "../Interfaces/CustomRequestType";
 import { responseHandler } from "../Utilities/responseHandler";
@@ -19,8 +19,8 @@ const maybeGetAllOrder = async (req: CustomRequestType, res: Response) => {
 }
 
 const maybePlaceOrder = async (req: CustomRequestType, res: Response) => {
-    const userId = req.userId;
-    const order = req.body;
+    const userId         = req.userId;
+    const order          = req.body;
     const {error, value} = orderVerification(order);
 
     if (error) {
@@ -31,6 +31,7 @@ const maybePlaceOrder = async (req: CustomRequestType, res: Response) => {
                 });
 
         res.status(400).json(errorMessages);
+        return;
     }
     const creationSuccessful = await OrderService.maybePlaceOrder(userId as string, order);
     

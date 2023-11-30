@@ -2,15 +2,23 @@ import mongoose, { Schema, mongo } from "mongoose";
 import { addressType, fullName, userInterface } from "../Interfaces/UserInterface";
 
 const fullNameSchema = new Schema<fullName>({
-    firstName: {type: String, required: true},
-    lastName : {type: String, required: true}
-});
+        firstName: {type: String, required: true},
+        lastName : {type: String, required: true},
+    },
+    { 
+        _id: false 
+    }
+);
 
 const addressSchema = new Schema<addressType>({
-    street : {type: String, required: true},
-    city   : {type: String, required: true},
-    country: {type: String, required: true}
-});
+        street : {type: String, required: true},
+        city   : {type: String, required: true},
+        country: {type: String, required: true}
+    },
+    {
+        _id: false
+    }
+);
 
 
 const userSchema = new Schema<userInterface>({

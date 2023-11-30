@@ -64,6 +64,7 @@ export const validateUserData = (userData: userInterface): Joi.ValidationResult<
       .messages({
         'invalidHobbies': 'Array can be of string only with a maximum of 10 elements.'
       }),
+    orders: Joi.array().optional(),
     address: Joi.object({
       street: Joi.string()
         .required()
@@ -146,6 +147,11 @@ export const validateUserDataOnUpdate = (userData: userInterface) : Joi.Validati
       .messages({
         'invalidHobbies': 'Array can be of string only with a maximum of 10 elements.'
       }),
+    orders: Joi.array().items(Joi.object({
+        productName: Joi.string().min(3).max(50).required(),
+        price: Joi.number().min(0).required(),
+        quantity: Joi.number().min(1).required(),
+    })).optional(),
     address: Joi.object({
       street: Joi.string()
         .min(3)
