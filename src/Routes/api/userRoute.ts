@@ -10,7 +10,6 @@ const getUserId = (req: Request): string => {
 }
 
 userRoute.use('/:userId/orders',(req: CustomRequestType, res, next) => {
-    // Pass the userId to the orderRoute
     req.userId = getUserId(req);
     next();
 }, orderRoute);
