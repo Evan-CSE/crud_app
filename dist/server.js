@@ -18,7 +18,7 @@ const app_1 = __importDefault(require("./app"));
 const mainFunction = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield mongoose_1.default.connect(config_1.default.MONGODB_BASE_URL, {
-            serverSelectionTimeoutMS: 3000
+            serverSelectionTimeoutMS: 10000
         })
             .then(() => console.log('Connected to mongodb'));
         app_1.default.listen(config_1.default.PORT, () => {

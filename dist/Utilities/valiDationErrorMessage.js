@@ -1,13 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.invalidNumberTypeError = exports.invalidArrayTypeError = exports.invalidStringTypeError = exports.booleanError = exports.invalidEmail = exports.invalidNameError = exports.mustBeANumberError = exports.invalidPassWordError = exports.invalidUserNameError = exports.invalidUserIdError = void 0;
-exports.invalidUserIdError = new Error('Make sure userId contains only numbers');
-exports.invalidUserNameError = new Error('Invalid userName provided. Make sure username contains 4-10 characters');
-exports.invalidPassWordError = new Error('Password Error. Password length must be between 6-20');
-exports.mustBeANumberError = new Error('Must be a number');
-exports.invalidNameError = new Error('Invalid name. Must contain letters only between length 3-10');
-exports.invalidEmail = new Error('Invalid email. Currently, we support .com and .net mail only');
-exports.booleanError = new Error('Type Error. Field must be boolean');
-exports.invalidStringTypeError = new Error('Type Error. Field must be string');
-exports.invalidArrayTypeError = new Error('Type error. Array can be of string only with maximum of 10 number of elements');
-exports.invalidNumberTypeError = new Error('Must be a number');
+exports.CustomErrorMessage = void 0;
+exports.CustomErrorMessage = {
+    invalidUserIdError: 'Make sure userId contains only numbers',
+    invalidUserNameError: 'Invalid userName provided. Make sure username contains 4-10 characters',
+    invalidPassWordError: 'Password Error. Password length must be between 6-20',
+    mustBeANumberError: 'Must be a number',
+    invalidNameError: 'Must contain letters only between length 3-10',
+    invalidEmailError: 'Currently, we support .com and .net mail only',
+    booleanError: 'Field must be boolean',
+    invalidStringTypeError: 'Field must be string',
+    invalidArrayTypeError: 'Array can be of string only with a maximum of 10 elements',
+    invalidNumberTypeError: 'Must be a number',
+    invalidCountryName: 'Invalid country name provided'
+};

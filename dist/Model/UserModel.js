@@ -27,12 +27,16 @@ exports.userModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const fullNameSchema = new mongoose_1.Schema({
     firstName: { type: String, required: true },
-    lastName: { type: String, required: true }
+    lastName: { type: String, required: true },
+}, {
+    _id: false
 });
 const addressSchema = new mongoose_1.Schema({
     street: { type: String, required: true },
     city: { type: String, required: true },
     country: { type: String, required: true }
+}, {
+    _id: false
 });
 const userSchema = new mongoose_1.Schema({
     userId: { type: Number, required: true },
@@ -43,6 +47,7 @@ const userSchema = new mongoose_1.Schema({
     fullName: { type: fullNameSchema },
     email: { type: String, required: true },
     isActive: { type: Boolean },
-    hobbies: { type: [String], required: true }
+    hobbies: { type: [String], required: true },
+    orders: { type: [Object] }
 });
 exports.userModel = mongoose_1.default.model('User', userSchema);

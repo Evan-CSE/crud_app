@@ -6,3 +6,6 @@ A simple crud api
 `npm i`
 ## Run the app
 `npm run start`
+
+### Live link
+https://l2-assignment.vercel.app/api/users

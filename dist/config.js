@@ -8,5 +8,6 @@ const path_1 = __importDefault(require("path"));
 dotenv_1.default.config({ path: path_1.default.join(process.cwd(), '.env') });
 exports.default = {
     PORT: process.env.PORT,
-    MONGODB_BASE_URL: process.env.BASE_MONGODB_URL
+    MONGODB_BASE_URL: process.env.BASE_MONGODB_URL,
+    SALT: process.env.SALT_ROUND
 };
